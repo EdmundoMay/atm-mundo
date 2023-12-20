@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ATM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./main.js" defer></script>
+</head>
+
+<body>
+
+    <div class="card col-auto">
+        <img src="./images/img-atm.jpg" class="card-img-top w-25 align-self-center" alt="...">
+        
+        <div id="form-login" class="card-body text-center">
+            <h5 class="card-title">Bienvenid@</h5>
+            <div class="form-floating">
+                <select class="form-select" id="select-account" aria-label="Floating label select example" required>
+                    <option selected>Selecciona una cuenta:</option>
+                    <option id="account1" value="0"></option>
+                    <option id="account2" value="1"></option>
+                    <option id="account3" value="2"></option>
+                </select>
+                <label for="floatingSelect">Elegir cuenta</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="input-password" placeholder="Password" maxlength="4"
+                    required>
+                <label for="floatingPassword">Password</label>
+            </div>
+            <button id="enter-btn" class="btn btn-primary m-4">Entrar</button>
+            <div class="alert alert-info" role="alert" id="hint">
+                Tu password es de 4 dígitos numéricos.
+            </div>
+        </div>
+
+        <div id="menu-container" class="card-body text-center">
+           
+            <div id="balance-container" class="card">
+                <div class="card-header">
+                    <h5 class="card-title" id="menu-title"></h5>
+                </div>
+                <div class="card-body">
+                    <h3>Tu saldo es: </h3>
+                    <h3><span class="badge bg-secondary" id="balance-amount"></span></h3>
+                </div>
+                <div class="alert alert-info" role="alert" id="hint-balance"></div>
+            </div>
+           
+            <div id="enter-amount-container" class="card justify-content-center">
+                <div class="card-header">
+                    <h5 class="card-title" id="enter-amount-title">Depositar</h5>
+                </div>
+                <div id="form-enter-amount" class="card-body">
+                    <div class="col-sm-3">
+                        <label for="enter-amount-input">Ingresa la cantidad deseada: </label>
+                        <input type="number" class="form-control" id="enter-amount-input" placeholder="$0.00">
+                    </div>
+                    <div class="col-auto">
+                        <button id="enter-amount-btn" class="btn btn-primary mb-3">Depositar</button>
+                    </div>
+                </div>
+            </div>
+           
+            <div id="withdraw-amount-container" class="card justify-content-center">
+                <div class="card-header">
+                    <h5 class="card-title" id="withdraw-amount-title">Retirar</h5>
+                </div>
+                <div id="form-withdraw-amount" class="card-body">
+                    <div class="col-sm-3">
+                        <label for="withdraw-amount-input">Ingresar la cantidad deseada: </label>
+                        <input type="number" class="form-control" id="withdraw-amount-input" placeholder="$0.00">
+                    </div>
+                    <div class="col-auto">
+                        <button id="withdraw-amount-btn" class="btn btn-primary mb-3">Retirar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>
