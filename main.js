@@ -19,6 +19,7 @@ let cuentas = [
   const menuTitle = document.querySelector("#menu-title");
   const balance = document.querySelector("#balance-amount");
   const hintBalance = document.querySelector('#hint-balance');
+  const exitBtn = document.querySelector('#exit-btn');
   
   const enterAmountContainer = document.querySelector("#enter-amount-container");
   const enterAmountInput = document.querySelector("#enter-amount-input");
@@ -77,6 +78,21 @@ selectThree.textContent = cuentas[2].nombre;
   
   //Enter Login Event
   buttonEnter.addEventListener("click", valuePassword);
+
+  function exitOut() {
+    menuSection.style.display = "none";
+    hintBalance.style.display = 'none';
+    window.localStorage.clear();
+    formLogin.style.display = "";
+    restartStyleLogin;
+    accountSelected.value = 'Selecciona una cuenta:';
+    textPass.value = '';
+    hint.textContent = 'Tu password es de 4 dígitos numéricos.'
+    hint.classList = "alert alert-info";
+  }
+
+  //Exit event
+  exitBtn.addEventListener('click', exitOut)
   
   //Update balance
   function updateBalance(amountNew) {
